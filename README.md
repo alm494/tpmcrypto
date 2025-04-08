@@ -6,6 +6,7 @@ Encrypt and decrypt string data using TPM 2.0 capabilities in Golang. This appro
 
 + Uses hardware TMP 2.0 security chip presented on most mainboards;
 + Encrypted data can only be decrypted on the same computer where it was encrypted;
++ Creates and persists on the chip a new RSA 2048 key pair with a handle 0x81000100 (read TPM docs about handle range)
 + The TPM is used for asymmetric decryption (RSA), while symmetric decryption (AES) is handled in software;
 + Combines the encrypted AES key and ciphertext, then encodes the result in Base64.
 
@@ -17,7 +18,7 @@ Encrypt and decrypt string data using TPM 2.0 capabilities in Golang. This appro
 ## Example
 
 ```
-// Specify the TPM2 key handle (read docs about range)
+// Specify the TPM2 key handle
 keyHandle := tpmutil.Handle(0x81000100)
 
 // Encrypt a string
