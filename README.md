@@ -12,8 +12,9 @@ Encrypt and decrypt string data using TPM 2.0 capabilities in Golang. This appro
 
 ## Limitations
 
-+ Root privileges required to access TPM chip, or add your user to the tss group (may depend on Linux distro)
++ Root privileges required to access TPM chip, or add your user to the tss group (may depend on Linux distro);
 + Your hardware may not contain TPM 2.0 chip;
++ Avoid multithread access to the TPM.
 
 ## Example
 
