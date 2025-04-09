@@ -11,7 +11,7 @@ This approach leverages the hardware-based security features of TPM 2.0 to provi
 
 + Hardware-based security : utilizes the TPM 2.0 security chip, which is available on most modern motherboards, to ensure robust protection of sensitive data.
 + Machine-specific encryption : encrypted data can only be decrypted on the same machine where it was encrypted, ensuring data remains tied to the hardware.
-+ RSA key pair management : generates and securely stores a new RSA 2048-bit key pair on the TPM chip with the handle 0x81000100. (Refer to TPM documentation for details on handle ranges.)
++ RSA key pair management : generates and securely stores a new RSA 2048-bit key pair on the TPM chip with the handle specified in the allowed range. (Refer to TPM documentation for details on handle ranges.)
 + Hybrid encryption approach : the TPM performs asymmetric encryption/decryption using RSA, and symmetric encryption/decryption (AES) is handled in software for efficiency.
 + Base64 encoding : combines the encrypted AES key and ciphertext, then encodes the result in Base64 for easy storage and transmission.
   
