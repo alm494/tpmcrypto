@@ -1,20 +1,24 @@
 # tpmcrypto
 
-Encrypt and decrypt string data using TPM 2.0 capabilities in Golang. This approach provides a highly secure solution for persisting sensitive data in databases.
+Encrypt and decrypt string data using TPM 2.0 capabilities in Golang.
+
+This approach leverages the hardware-based security features of TPM 2.0 to provide a highly secure solution for persisting sensitive data in databases.
 
 ## Key features  
 
-+ Uses hardware TMP 2.0 security chip presented on most mainboards;
-+ Encrypted data can only be decrypted on the same computer where it was encrypted;
-+ Creates and persists on the chip a new RSA 2048 key pair with a handle 0x81000100 (read TPM docs about handle range)
-+ The TPM is used for asymmetric decryption (RSA), while symmetric decryption (AES) is handled in software;
-+ Combines the encrypted AES key and ciphertext, then encodes the result in Base64.
-
++ Hardware-Based Security : Utilizes the TPM 2.0 security chip, which is available on most modern motherboards, to ensure robust protection of sensitive data.
++ Machine-Specific Encryption : Encrypted data can only be decrypted on the same machine where it was encrypted, ensuring data remains tied to the hardware.
++ RSA Key Pair Management : Generates and securely stores a new RSA 2048-bit key pair on the TPM chip with the handle 0x81000100. (Refer to TPM documentation for details on handle ranges.)
++ Hybrid Encryption Approach :
+++ The TPM performs asymmetric encryption/decryption using RSA.
+++ The TPM performs asymmetric encryption/decryption using RSA.
++ Base64 Encoding : Combines the encrypted AES key and ciphertext, then encodes the result in Base64 for easy storage and transmission.
+  
 ## Limitations
 
-+ Root privileges required to access TPM chip, or add your user to the tss group (may depend on Linux distro);
-+ Your hardware may not contain TPM 2.0 chip;
-+ Avoid multithread access to the TPM.
++ Privileged Access Required : Root privileges are necessary to access the TPM chip. Alternatively, you can add your user to the tss group (this may vary depending on the Linux distribution).
++ Hardware Dependency : This solution requires a TPM 2.0 chip, which may not be present on all systems.
++ Concurrency Restrictions : Avoid multithreaded access to the TPM, as it may lead to resource contention or unexpected behavior.
 
 ## Example
 
