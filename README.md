@@ -1,3 +1,6 @@
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/alm494/tpmcrypto/blob/main/README.md)
+[![en](https://img.shields.io/badge/lang-ru-red.svg)](https://github.com/alm494/tpmcrypto/blob/main/README.ru.md)
+
 # tpmcrypto
 
 Encrypt and decrypt string data using TPM 2.0 capabilities in Golang.
