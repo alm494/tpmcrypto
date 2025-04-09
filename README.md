@@ -23,7 +23,7 @@ This approach leverages the hardware-based security features of TPM 2.0 to provi
 
 ## Example
 
-```
+```Go
 // Specify the TPM2 key handle
 keyHandle := tpmutil.Handle(0x81000100)
 
