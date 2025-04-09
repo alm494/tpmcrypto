@@ -17,6 +17,7 @@ This approach leverages the hardware-based security features of TPM 2.0 to provi
   
 ## Limitations
 
++ You should be familiar with the limitations based on the local legislation of your country regarding the legality of using strong cryptography
 + Privileged access required : root privileges are necessary to access the TPM chip. Alternatively, you can add your user to the tss group (this may vary depending on the Linux distribution).
 + Hardware dependency : this solution requires a TPM 2.0 chip, which may not be present on all systems.
 + Concurrency restrictions : avoid multithreaded access to the TPM, as it may lead to resource contention or unexpected behavior.
