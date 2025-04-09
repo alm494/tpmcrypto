@@ -9,17 +9,17 @@ This approach leverages the hardware-based security features of TPM 2.0 to provi
 
 ## Key features  
 
-+ Hardware-Based Security : Utilizes the TPM 2.0 security chip, which is available on most modern motherboards, to ensure robust protection of sensitive data.
-+ Machine-Specific Encryption : Encrypted data can only be decrypted on the same machine where it was encrypted, ensuring data remains tied to the hardware.
-+ RSA Key Pair Management : Generates and securely stores a new RSA 2048-bit key pair on the TPM chip with the handle 0x81000100. (Refer to TPM documentation for details on handle ranges.)
-+ Hybrid Encryption Approach : the TPM performs asymmetric encryption/decryption using RSA, and symmetric encryption/decryption (AES) is handled in software for efficiency.
-+ Base64 Encoding : Combines the encrypted AES key and ciphertext, then encodes the result in Base64 for easy storage and transmission.
++ Hardware-based security : utilizes the TPM 2.0 security chip, which is available on most modern motherboards, to ensure robust protection of sensitive data.
++ Machine-specific encryption : encrypted data can only be decrypted on the same machine where it was encrypted, ensuring data remains tied to the hardware.
++ RSA key pair management : generates and securely stores a new RSA 2048-bit key pair on the TPM chip with the handle 0x81000100. (Refer to TPM documentation for details on handle ranges.)
++ Hybrid encryption approach : the TPM performs asymmetric encryption/decryption using RSA, and symmetric encryption/decryption (AES) is handled in software for efficiency.
++ Base64 encoding : combines the encrypted AES key and ciphertext, then encodes the result in Base64 for easy storage and transmission.
   
 ## Limitations
 
-+ Privileged Access Required : Root privileges are necessary to access the TPM chip. Alternatively, you can add your user to the tss group (this may vary depending on the Linux distribution).
-+ Hardware Dependency : This solution requires a TPM 2.0 chip, which may not be present on all systems.
-+ Concurrency Restrictions : Avoid multithreaded access to the TPM, as it may lead to resource contention or unexpected behavior.
++ Privileged access required : root privileges are necessary to access the TPM chip. Alternatively, you can add your user to the tss group (this may vary depending on the Linux distribution).
++ Hardware dependency : this solution requires a TPM 2.0 chip, which may not be present on all systems.
++ Concurrency restrictions : avoid multithreaded access to the TPM, as it may lead to resource contention or unexpected behavior.
 
 ## Example
 
