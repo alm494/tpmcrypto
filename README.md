@@ -3,7 +3,7 @@
 
 # tpmcrypto
 
-Encrypt and decrypt string data using TPM 2.0 capabilities in Golang.
+A simple library to encrypt and decrypt string data using TPM 2.0 capabilities in Golang.
 
 This approach leverages the hardware-based security features of TPM 2.0 to provide a highly secure solution for persisting sensitive data in databases.
 
